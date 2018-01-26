@@ -4,13 +4,13 @@ import App from './App';
 import Bins from './components/Bins/Bins'
 import CreateInv from './components/CreateInv/CreateInv'
 import Shelves from './components/Shelves/Shelves';
-import Bin from './components/Bin/Bin'
+import Items from './components/Items/Items'
 
 export default (
     <Switch>
         <Route exact path='/' component={Shelves}/>
         <Route path='/bins/:bins' component={Bins}/>
         <Route path='/create/:bin' component={CreateInv}/>
-        <Route path='/bin/:bin' component={Bin}/>
+        <Route path='/items/:item' component={Items}/>
     </Switch>
 )

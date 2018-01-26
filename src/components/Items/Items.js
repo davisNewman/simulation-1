@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class Bin extends Component {
+export default class Items extends Component {
 
     render(){
         return(

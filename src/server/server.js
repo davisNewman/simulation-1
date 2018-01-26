@@ -4,8 +4,10 @@ const massive = require('massive')
 const bodyParser = require('body-parser')
 const app = express()
 const controller = require('../controllers/controllers')
+const cors = require('cors')
 
 app.use(bodyParser.json())
+app.use(cors())
 
 require('dotenv').config()
 
