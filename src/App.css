@@ -57,3 +57,10 @@
 a {
   text-decoration: none;
 }
+
+.image{
+  width: 50px;
+  top: 13px;
+  margin-right: 10px;
+  position: relative;
+}
