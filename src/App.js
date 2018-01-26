@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
 import './Imgs/logo.png'
+import routes from './routes'
 
 export default class App extends Component {
   render() {
@@ -13,10 +14,11 @@ export default class App extends Component {
           </div>
         </div>
         <div className='shelves'>
-          <div className='shelf'>Shelf A </div>
-          <div className='shelf'>Shelf B </div>
-          <div className='shelf'>Shelf C </div>
-          <div className='shelf'>Shelf D </div>
+          {routes}
+          {/* <Link to=''><div className='shelf'>Shelf A </div></Link>
+          <Link to=''><div className='shelf'>Shelf B </div></Link>
+          <Link to=''><div className='shelf'>Shelf C </div></Link>
+          <Link to=''><div className='shelf'>Shelf D </div></Link> */}
         </div>
        
         
