@@ -1,4 +1,4 @@
-import React, { Component } from 'raect'
+import React, { Component } from 'react'
 
 export default class CreateInv extends Component {
 
