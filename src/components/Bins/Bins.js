@@ -14,13 +14,13 @@ export default class Bins extends Component {
     }
 
     componentDidMount(){
-        axios.get('/api/shelfie')
+        axios.get('/api/shelfie/')
     }
 
     render(){
         return(
         <div className='test'>
-    
+            
         
         </div>
         )
