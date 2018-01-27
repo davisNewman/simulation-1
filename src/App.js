@@ -3,7 +3,7 @@ import './App.css';
 import image from './imgs/logo.png'
 import routes from './routes'
 import { Link } from 'react-router-dom'
-import Shelves from './components/Shelves/Shelves'
+
 
 export default class App extends Component {
   render() {

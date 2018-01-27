@@ -13,25 +13,16 @@ export default class Bins extends Component {
         }
     }
 
+    componentDidMount(){
+        axios.get('/api/shelfie')
+    }
+
     render(){
         return(
-            <div className='bin-list'>
-                <div className='individual-bin'>
-                    <span className='add-to-bin'>+ Add inventory to bin</span> 
-                </div>
-                <div className='individual-bin'>
-                    <span className='add-to-bin'>+ Add inventory to bin</span> 
-                </div>
-                <div className='individual-bin'>
-                    <span className='add-to-bin'>+ Add inventory to bin</span> 
-                </div>
-                <div className='individual-bin'>
-                    <span className='add-to-bin'>+ Add inventory to bin</span> 
-                </div>
-                <div className='individual-bin'>
-                    <span className='add-to-bin'>+ Add inventory to bin</span> 
-                </div>
-            </div>
+        <div className='test'>
+    
+        
+        </div>
         )
     }
 }

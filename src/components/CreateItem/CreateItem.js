@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-export default class CreateInv extends Component {
+export default class CreateItem extends Component {
 
     render(){
         return(
