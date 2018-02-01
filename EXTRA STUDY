@@ -1,0 +1,58 @@
+import React, {Component} from 'react'
+import {link, Link} from 'react-router-dom'
+import './navBar.css'
+
+export default function NavBar (props){
+    console.log(props.nav, props.binNum)
+    switch(props.nav){
+        case 'a':
+            return(
+                <div className='shelfNav'>
+                    <Link to='/'><button> Shelfie</button></Link>
+                    <h1 className='shelf'>shelf A</h1>
+                </div>
+            )
+            break;
+        case 'b':
+            return(
+                 <div className='navMain'>
+                    <Link to='/'><button className='homeLink'> Shelfie</button></Link>
+                    <h1 className='shelf'>shelf B</h1>
+                </div>
+            )
+            break;
+        case 'c':
+            return(
+                 <div className='navMain'>
+                    <Link to='/'><button className='homeLink'> Shelfie</button></Link>
+                    <h1 className='shelf'>shelf C</h1>
+                </div>
+            )
+            break;
+        case 'd':
+            return(
+                 <div className='navMain'>
+                    <Link to='/'><button className='homeLink'> Shelfie</button></Link>
+                    <h1 className='shelf'>shelf D</h1>
+                </div>
+            )
+            break;
+        case 'home':
+            return(
+                 <div className='homeNav'>
+                    <h1>Shelfie</h1>
+                </div>
+            )
+            break;
+        case 'bin':
+            return(
+                 <div className='navMain'>
+                     <Link to='/'><button className='homeLink'> Shelfie</button></Link>
+                     <Link to='/shelf_d'><button className='shelfLink'> Shelf D </button></Link>
+                    <h1 className='bin'>Bin</h1>
+                </div>
+            )
+        break;    
+    }
+    
+}
