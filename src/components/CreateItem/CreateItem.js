@@ -4,7 +4,12 @@ export default class CreateItem extends Component {
 
     render(){
         return(
-            <div></div>
+            <div>
+                Name 
+                <input/>
+                Price
+                <input/>
+            </div>
         )
     }
 }

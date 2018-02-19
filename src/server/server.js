@@ -3,19 +3,25 @@ const dotenv = require('dotenv')
 const massive = require('massive')
 const bodyParser = require('body-parser')
 const app = express()
-const controller = require('../controllers/controllers')
 const cors = require('cors')
+const { SERVER_PORT } = process.env
 require('dotenv').config()
 
-// massive(process.env.CONNECTION_STRING).then(dbInstance => app.set('db',dbInstance))
+massive(process.env.CONNECTION_STRING).then(db=>{
+    app.set('db', db)
+})
 
 app.use(bodyParser.json())
 app.use(cors())
 
-app.get('/api/shelfie/', controller.getBins)
+app.get('/api/shelfie/bins', (req,res)=>{
+    const db = req.app.get('db')
+    db.get_bins([req.query.bins])
+    .then(resp=>{
+        res.status(200).send(resp)
+    })
+})
 
-
-const port = 3001;
-app.listen(port, ()=>{
-    console.log(`Listening on port ${port}`)
+app.listen(process.env.SERVER_PORT, ()=>{
+    console.log(`Listening on port ${process.env.SERVER_PORT}`)
 });

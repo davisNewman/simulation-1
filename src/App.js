@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import './components/Shelves/Shelves.css';
 import image from './imgs/logo.png'
 import routes from './routes'
 import { Link } from 'react-router-dom'
