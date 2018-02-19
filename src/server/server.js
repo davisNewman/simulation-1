@@ -14,6 +14,8 @@ massive(process.env.CONNECTION_STRING).then(db=>{
 app.use(bodyParser.json())
 app.use(cors())
 
+
+//--------Axios Calls--------//
 app.get('/api/shelfie/bins', (req,res)=>{
     const db = req.app.get('db')
     db.get_bins([req.query.bins])
@@ -21,6 +23,17 @@ app.get('/api/shelfie/bins', (req,res)=>{
         res.status(200).send(resp)
     })
 })
+
+
+app.post('/api/shelfie/createItem', (req,res)=>{
+    let { id, name, price } = req.body
+    const db = req.app.get('db')
+    db.add_items([id, name, price])
+    .then(resp=>{
+        res.status(200).send(resp)
+    })
+})
+
 
 app.listen(process.env.SERVER_PORT, ()=>{
     console.log(`Listening on port ${process.env.SERVER_PORT}`)
