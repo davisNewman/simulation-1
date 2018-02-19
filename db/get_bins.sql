@@ -1,3 +1,3 @@
 select * 
-from bins
+from simulation1
 where shelf = $1

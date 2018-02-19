@@ -1,0 +1,46 @@
+.container {
+    width: 100%;
+    box-sizing: border-box;
+    height: calc(100%-100px);
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container-title {
+    font-weight: 700;
+    font-family: Open Sans, sans-serif;
+    margin-top: 0;
+    margin-left: 10px;
+    margin-bottom: 3px;
+    position: relative;
+    left: -200px;
+    font-size: 30px;
+}
+
+.input-box {
+    border: 1px solid #ab2a19;
+    border-radius: 3px;
+    padding: 12px;
+    min-width: 500px;
+    width: auto;
+    font-size: 30px;
+    margin-top: 0;
+    margin-bottom:30px;
+    font-weight: 700;
+}
+
+.add-inv-button {
+    font-weight: 700;
+    font-family: Open Sans, sans-serif;
+    background-color: #40f99b;
+    height: auto;
+    font-size: 30px;
+    border: none;
+    border-radius: 3px;
+    width: 526px;
+    padding: 10px 0;
+    cursor: pointer;
+    outline: none;
+}
