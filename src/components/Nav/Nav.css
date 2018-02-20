@@ -43,6 +43,13 @@
     color: white;
   }
   
+  .shelves {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 20px
+  }
+
   .shelf {
     background-color: #d34735;
     font-family: Open Sans, sans-serif;

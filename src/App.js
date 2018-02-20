@@ -6,11 +6,10 @@ import './components/Nav/Nav.css'
 export default class App extends Component {
   render() {
     return (
-      <div className = 'shelves'>
-       {routes}
-      </div>
+        <div>
+        {routes}
+        </div>
     );
   }
 }
 
-  
