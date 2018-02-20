@@ -1,5 +1,7 @@
 import React, { Component } from 'react'
 import axios from 'axios'
+import Nav from '../Nav/Nav'
+
 import './CreateItem.css'
 
 export default class CreateItem extends Component {
@@ -33,12 +35,17 @@ export default class CreateItem extends Component {
 
     render(){
         return(
-            <div className = 'container'>
-                <span className = 'container-title'> Name </span>
-                <input className = 'input-box' onChange = {(e)=>this.handleNameInput(e.target.value)}/>
-                <span className = 'container-title' value = '$'> Price </span>
-                <input className = 'input-box' onChange = {(e)=>this.handlePriceInput(e.target.value)}/>
-                <button className = 'add-inv-button'> + Add to Inventory </button>
+            <div className = 'app'>
+                <div className = 'nav'>
+                    <Nav url = {`/create/${this.props.match.params.bins}`}/>
+                </div>
+                <div className = 'container'>
+                    <span className = 'container-title'> Name </span>
+                    <input className = 'input-box' onChange = {(e)=>this.handleNameInput(e.target.value)}/>
+                    <span className = 'container-title' value = '$'> Price </span>
+                    <input className = 'input-box' onChange = {(e)=>this.handlePriceInput(e.target.value)}/>
+                    <button className = 'add-inv-button'> + Add to Inventory </button>
+                </div>
             </div>
         )
     }

@@ -10,7 +10,7 @@ export default function Nav (props){
             return(
                 <div className = 'nav-shelf'>
                     <div className = 'logo-holder'>
-                        <img className = 'shelf-image' src = {image} alt = 'logo'/>
+                        <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
                     </div>
                     <div className = 'shelf-title-box'>
                         <span className = 'shelf-title'> Shelf A </span>
@@ -18,27 +18,39 @@ export default function Nav (props){
                 </div>
             )
             break;
-        case 'B':
+        case '/bins/B':
             return(
-                 <div >
-                    <Link to='/'><button> SHELFIE </button></Link>
-                    <h1>SHELF B</h1>
+                <div className = 'nav-shelf'>
+                    <div className = 'logo-holder'>
+                        <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                    </div>
+                    <div className = 'shelf-title-box'>
+                        <span className = 'shelf-title'> Shelf B </span>
+                    </div> 
                 </div>
             )
             break;
-        case 'C':
+        case '/bins/C':
             return(
-                 <div>
-                    <Link to='/'><button> SHELFIE </button></Link>
-                    <h1>SHELF C</h1>
+                <div className = 'nav-shelf'>
+                <div className = 'logo-holder'>
+                    <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
                 </div>
+                <div className = 'shelf-title-box'>
+                    <span className = 'shelf-title'> Shelf C </span>
+                </div> 
+            </div>
             )
             break;
-        case 'D':
+        case '/bins/D':
             return(
-                 <div>
-                    <Link to='/'><button > SHELFIE </button></Link>
-                    <h1>shelf D</h1>
+                <div className = 'nav-shelf'>
+                <div className = 'logo-holder'>
+                    <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                </div>
+                <div className = 'shelf-title-box'>
+                    <span className = 'shelf-title'> Shelf D </span>
+                </div> 
                 </div>
             )
             break;
@@ -54,12 +66,29 @@ export default function Nav (props){
                     </div>
             )
             break;
-        case 'bin':
+        case '/create/A1':
             return(
-                 <div className = 'nav'>
+                <div className = 'nav-shelf'>
+                <div className = 'logo-holder'>
+                    <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                </div>
+                <div className = 'shelf-title-box'>
+                    <span className = 'shelf-title'> Add to Bin 1 </span>
+                </div> 
                 </div>
             )
-        break;
+        case '/create/A2':
+            return(
+                <div className = 'nav-shelf'>
+                <div className = 'logo-holder'>
+                    <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                </div>
+                <div className = 'shelf-title-box'>
+                    <span className = 'shelf-title'> Shelf D </span>
+                </div> 
+                </div>
+            )
+            break;
         default: 
         return <h1>`Hey you've got an error this should not be displayed`</h1>
     }

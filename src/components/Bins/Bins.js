@@ -26,7 +26,7 @@ export default class Bins extends Component {
         return(
             <div className = 'app'>
                 <div className = 'nav'>
-                    <Nav url = '/bins/A'/>
+                    <Nav url = {`/bins/${this.props.match.params.bins}`}/>
                 </div>
             <div className = 'shelves'>
                 {this.state.bins ? 
