@@ -4,13 +4,17 @@ import '../Nav/Nav.css'
 import image from '../../imgs/logo.png'
 
 export default function Nav (props){
-    console.log(props.url)
+
     switch(props.url){
-        case 'A':
+        case '/bins/A':
             return(
-                <div>
-                    <Link to='/'><button> SHELFIE </button></Link>
-                    <h1>SHELF A</h1>
+                <div className = 'nav-shelf'>
+                    <div className = 'logo-holder'>
+                        <img className = 'shelf-image' src = {image} alt = 'logo'/>
+                    </div>
+                    <div className = 'shelf-title-box'>
+                        <span className = 'shelf-title'> Shelf A </span>
+                    </div> 
                 </div>
             )
             break;
@@ -40,7 +44,6 @@ export default function Nav (props){
             break;
         case '/':
             return(
-
                     <div className = 'nav'>
                     <div className = 'nav-contents'>
                       {/* 54G & 54E*/ }
@@ -54,7 +57,6 @@ export default function Nav (props){
         case 'bin':
             return(
                  <div className = 'nav'>
-
                 </div>
             )
         break;
