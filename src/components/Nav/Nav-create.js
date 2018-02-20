@@ -1,16 +1,16 @@
 import React from 'react'
 import {link, Link} from 'react-router-dom'
-import '../Nav/Nav.css'
+import '../Nav/Nav-create.css'
 import image from '../../imgs/logo.png'
 
-export default function Nav (props){
+export default function NavCreate (props){
 
     switch(props.url){
         case '/bins/A':
             return(
                 <div className = 'nav-shelf'>
                     <div className = 'logo-holder'>
-                        <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                        <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                     </div>
                     <div className = 'shelf-title-box'>
                         <span className = 'shelf-title'> Shelf A </span>
@@ -22,7 +22,7 @@ export default function Nav (props){
             return(
                 <div className = 'nav-shelf'>
                     <div className = 'logo-holder'>
-                        <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                        <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                     </div>
                     <div className = 'shelf-title-box'>
                         <span className = 'shelf-title'> Shelf B </span>
@@ -34,7 +34,7 @@ export default function Nav (props){
             return(
                 <div className = 'nav-shelf'>
                 <div className = 'logo-holder'>
-                    <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                    <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                 </div>
                 <div className = 'shelf-title-box'>
                     <span className = 'shelf-title'> Shelf C </span>
@@ -46,7 +46,7 @@ export default function Nav (props){
             return(
                 <div className = 'nav-shelf'>
                 <div className = 'logo-holder'>
-                    <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                    <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                 </div>
                 <div className = 'shelf-title-box'>
                     <span className = 'shelf-title'> Shelf D </span>

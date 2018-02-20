@@ -26,12 +26,13 @@ app.get('/api/shelfie/bins', (req,res)=>{
 
 
 app.post('/api/shelfie/createItem', (req,res)=>{
-    let { id, name, price } = req.body
+    let { id, name, price} = req.body
     const db = req.app.get('db')
-    db.add_items([id, name, price])
+    db.add_items([id, name, price, id[0]])
     .then(resp=>{
         res.status(200).send(resp)
     })
+    .catch(console.log)
 })
 
 

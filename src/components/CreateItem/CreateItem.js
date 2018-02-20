@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import axios from 'axios'
-import Nav from '../Nav/Nav'
+import NavCreate from '../Nav/Nav-create'
 
 import './CreateItem.css'
 
@@ -27,9 +27,10 @@ export default class CreateItem extends Component {
     }
     
     handleAddNameInput(){
-        axios.post('/api/shelfie/createItem', {id: this.props.match.params.bins, name: this.state.binName , price: this.state.binPrice})
+        console.log(this.props.match.params)
+        axios.post('/api/shelfie/createItem', {id: this.props.match.params.bin, name: this.state.binName , price: this.state.binPrice})
         .then(res=>{
-            window.location.replace(`http://localhost3000:/bins/${this.props.match.params.bins}`)
+            this.props.history.push(`/bins/${this.props.match.params.bin}`)
         })
     }
 
@@ -37,14 +38,14 @@ export default class CreateItem extends Component {
         return(
             <div className = 'app'>
                 <div className = 'nav'>
-                    <Nav url = {`/create/${this.props.match.params.bins}`}/>
+                    <NavCreate url = {`/create/${this.props.match.params.bin}`}/>
                 </div>
                 <div className = 'container'>
                     <span className = 'container-title'> Name </span>
                     <input className = 'input-box' onChange = {(e)=>this.handleNameInput(e.target.value)}/>
                     <span className = 'container-title' value = '$'> Price </span>
                     <input className = 'input-box' onChange = {(e)=>this.handlePriceInput(e.target.value)}/>
-                    <button className = 'add-inv-button'> + Add to Inventory </button>
+                    <button className = 'add-inv-button' onClick = {()=>this.handleAddNameInput()}> + Add to Inventory </button>
                 </div>
             </div>
         )
