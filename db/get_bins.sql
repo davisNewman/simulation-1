@@ -1,3 +1,3 @@
 select * 
 from simulation1
-where shelf = $1
+where shelf_id = $1

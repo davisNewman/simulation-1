@@ -1,49 +1,56 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import '../Nav/Nav.css'
+import '../Nav/Nav-bin.css'
 import image from '../../imgs/logo.png'
 
-export default function Nav (props){
-
+export default function NavBin (props){
+    let param = props.param
     switch(props.url){
-        case '/bins/A':
+        
+        case `/bin/${param}`:
             return(
                 <div className = 'nav-shelf'>
                     <div className = 'logo-holder'>
-                        <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                        <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                     </div>
                     <div className = 'shelf-title-box'>
                         <span className = 'shelf-title'> Shelf A </span>
                     </div> 
+                    <div className = 'shelf-bin-box'>
+                        <span className = 'shelf-bin-title'> Bin 1</span>
+                    </div>
                 </div>
             )
-        case '/bins/B':
+        case `/bin/${param}`:
             return(
                 <div className = 'nav-shelf'>
                     <div className = 'logo-holder'>
-                        <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                        <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                     </div>
                     <div className = 'shelf-title-box'>
                         <span className = 'shelf-title'> Shelf B </span>
                     </div> 
+                    <div className = 'shelf-bin-box'>
+                        <span className = 'shelf-bin-title'> Bin 1</span>
+                    </div>
                 </div>
             )
-        case '/bins/C':
+        case `/bin/${param}`:
             return(
                 <div className = 'nav-shelf'>
                 <div className = 'logo-holder'>
-                    <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                    <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                 </div>
                 <div className = 'shelf-title-box'>
                     <span className = 'shelf-title'> Shelf C </span>
                 </div> 
             </div>
             )
-        case '/bins/D':
+        case `/bin/${param}`:
             return(
                 <div className = 'nav-shelf'>
                 <div className = 'logo-holder'>
-                    <a href = 'http://localhost:3000'><img className = 'shelf-image' src = {image} alt = 'logo'/></a>
+                    <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                 </div>
                 <div className = 'shelf-title-box'>
                     <span className = 'shelf-title'> Shelf D </span>

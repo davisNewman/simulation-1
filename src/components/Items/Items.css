@@ -1,0 +1,21 @@
+/* .container {
+    width: 100%;
+    height: calc(100% - 100px);
+    box-sizing: border-box;
+    display: flex;
+}
+
+.whitespace {
+    width: 10%;
+    min-width: 120px;
+    height: 100%;
+}
+
+.content {
+    width: 90%;
+    padding: 25px 0;
+}
+
+.pic-container {
+    min-width: 200px
+} */

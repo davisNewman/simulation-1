@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "proxy": "http://localhost:3001",
-  "main":"./src/server/server.js",
+  "main":"./server/server.js",
   "dependencies": {
     "axios": "^0.17.1",
     "body-parser": "^1.18.2",

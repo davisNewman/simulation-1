@@ -1,5 +1,5 @@
 import React from 'react'
-import {link, Link} from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import '../Nav/Nav-create.css'
 import image from '../../imgs/logo.png'
 
@@ -17,7 +17,6 @@ export default function NavCreate (props){
                     </div> 
                 </div>
             )
-            break;
         case '/bins/B':
             return(
                 <div className = 'nav-shelf'>
@@ -29,7 +28,6 @@ export default function NavCreate (props){
                     </div> 
                 </div>
             )
-            break;
         case '/bins/C':
             return(
                 <div className = 'nav-shelf'>
@@ -41,7 +39,6 @@ export default function NavCreate (props){
                 </div> 
             </div>
             )
-            break;
         case '/bins/D':
             return(
                 <div className = 'nav-shelf'>
@@ -53,7 +50,6 @@ export default function NavCreate (props){
                 </div> 
                 </div>
             )
-            break;
         case '/':
             return(
                     <div className = 'nav'>
@@ -65,7 +61,6 @@ export default function NavCreate (props){
                     </div>
                     </div>
             )
-            break;
     
         default: 
         return <h1>`Hey you've got an error this should not be displayed`</h1>

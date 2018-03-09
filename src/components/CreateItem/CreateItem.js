@@ -9,8 +9,8 @@ export default class CreateItem extends Component {
         super(props);
     
         this.state = {
-            binName: '',
-            binPrice: ''
+            binName: null,
+            binPrice: null
         }
     }
 
@@ -27,10 +27,9 @@ export default class CreateItem extends Component {
     }
     
     handleAddNameInput(){
-        console.log(this.props.match.params)
         axios.post('/api/shelfie/createItem', {id: this.props.match.params.bin, name: this.state.binName , price: this.state.binPrice})
         .then(res=>{
-            this.props.history.push(`/bins/${this.props.match.params.bin}`)
+            this.props.history.push(`/bins/${this.props.match.params.bin[0]}`)
         })
     }
 
