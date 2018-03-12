@@ -38,6 +38,7 @@
     /* 25C */
     position: relative;
     left: -165px;
+    display: block;
   }
 
   .nav-shelf {
@@ -68,7 +69,6 @@
   .shelf-title {
     color: white;
     font-size: 30px;
-    margin-left: 20px;
     font-weight: 700;
     font-family: Open Sans, sans-serif;
   }

@@ -27,6 +27,16 @@ app.get('/api/shelfie/bins', (req,res)=>{
     .catch(console.log)
 })
 
+app.get('/api/shelfie/getItem', (req,res)=>{
+    const db = req.app.get('db')
+    db.get_bin_item([req.query.id])
+    .then(resp=>{
+        res.status(200).send(resp[0])
+    })
+    .catch(console.log)
+})
+
+
 app.post('/api/shelfie/createItem', (req,res)=>{
     let { id, name, price} = req.body
     const db = req.app.get('db')
@@ -37,15 +47,16 @@ app.post('/api/shelfie/createItem', (req,res)=>{
     .catch(console.log)
 })
 
-app.get('/api/shelfie/getItem', (req,res)=>{
+app.put('/api/shelfie/editItem', (req,res)=>{
     const db = req.app.get('db')
-    db.get_bin_item([req.query.id])
+    db.edit_items([req.body.binName, req.body.binPrice, req.query.id])
     .then(resp=>{
-        res.status(200).send(resp[0])
+        db.get_bin_item([req.query.id])
+        .then(response=>{
+            res.status(200).send(response)
+        })
     })
-    .catch(console.log)
 })
-
 
 app.listen(process.env.SERVER_PORT, ()=>{
     console.log(`Listening on port ${process.env.SERVER_PORT}`)

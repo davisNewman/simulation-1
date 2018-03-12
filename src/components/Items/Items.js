@@ -10,6 +10,7 @@ export default class Items extends Component {
         this.state = {
             binName: null,
             binPrice: null,
+            itemChange: false,
         }
     }
 
@@ -17,12 +18,38 @@ export default class Items extends Component {
         axios.get(`/api/shelfie/getItem?id=${this.props.match.params.item}`)
         .then(res=>{
             this.setState({
-                binName: res.data.bin_name
+                binName: res.data.bin_name,
+                binPrice: res.data.bin_price
             })
         })
     }
+
+
+    handleEdit(){
+        this.setState({
+            itemChange: true
+        })
+    }
     
+    handleNameInput(val){
+        this.setState({
+            binName: val
+        })
+    }
     
+    handlePriceInput(val){
+        this.setState({
+            binPrice: val
+        })
+    } 
+
+    handleEdit2(){
+        axios.put(`/api/shelfie/editItem?id=${this.props.match.params.item}`, {binName: this.state.binName, binPrice: this.state.binPrice} )
+        this.setState({
+            itemChange: false
+        })
+    }
+
     render(){
         return(
             <div className = 'app'>
@@ -30,17 +57,18 @@ export default class Items extends Component {
                     <NavBin url = {this.props.location.pathname} param = {this.props.match.params.item}/>
                 </div>
                 <div className = 'container'>
-                    <div className = 'whitespace'></div>
-                    <div className = 'content'>
-                        <div className = 'pic-container'>
-                        </div>          
+                    <div className = 'content'>   
                         <div className = 'right'>
-                            <span className = 'name'> Name </span>
-                            <input></input>
-                            <span className = 'price'> Price </span>
-                            <input></input>
-                            <button> Edit </button>
-                            
+                            <div className = 'data'>
+                            <span> Name </span>
+                                {!this.state.itemChange ? <input value = {this.state.binName}></input> : <input onChange = {(e)=>this.handleNameInput(e.target.value)}></input>}
+                                    <span> Price </span>
+                                {!this.state.itemChange ? <input value = {this.state.binPrice}></input> : <input onChange = {(e)=>this.handlePriceInput(e.target.value)}></input>}
+                            </div>
+                            <div className = 'button-data'>
+                                {!this.state.itemChange ? <button className = 'edit' onClick = {()=>this.handleEdit()}> Edit </button> : <button className = 'save' onClick = {()=>this.handleEdit2()}> Save</button>}
+                                <button> Delete </button>
+                            </div>
                         </div>               
                     </div> 
                 </div>
