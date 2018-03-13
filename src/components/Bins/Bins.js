@@ -20,6 +20,7 @@ export default class Bins extends Component {
     componentDidMount(){
         axios.get(`/api/shelfie/bins?bins=${this.props.match.params.bins}`)
         .then(res=>{
+            console.log(res.data)
             this.setState({
                 bin1: res.data[0],
                 bin2: res.data[1],
@@ -46,10 +47,10 @@ export default class Bins extends Component {
                 {this.state.bin3 ? 
                     <Link to = {`/bin/${this.props.match.params.bins}3`}><div className = 'individual-bin'> Bin 3 </div></Link> : 
                     <Link to = {`/create/${this.props.match.params.bins}3`}><div className = 'add-to-bin-button'> + Add Inventory to bin </div></Link>}
-                {this.state.bins4 ? 
+                {this.state.bin4 ? 
                     <Link to = {`/bin/${this.props.match.params.bins}4`}><div className = 'individual-bin'> Bin 4 </div></Link> : 
                     <Link to = {`/create/${this.props.match.params.bins}4`}><div className = 'add-to-bin-button'> + Add Inventory to bin </div></Link>}
-                {this.state.bins5 ? 
+                {this.state.bin5 ? 
                     <Link to = {`/bin/${this.props.match.params.bins}5`}><div className = 'individual-bin'> Bin 5 </div></Link> : 
                     <Link to = {`/create/${this.props.match.params.bins}5`}><div className = 'add-to-bin-button'> + Add Inventory to bin </div></Link>}
             </div>

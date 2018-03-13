@@ -4,50 +4,64 @@ import '../Nav/Nav-create.css'
 import image from '../../imgs/logo.png'
 
 export default function NavCreate (props){
-
+    let param = props.param
+    let param2 = props.param[0]
+    let param3 = props.param[1]
     switch(props.url){
-        case '/bins/A':
+        case `/create/${param}`:
             return(
                 <div className = 'nav-shelf'>
                     <div className = 'logo-holder'>
                         <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                     </div>
                     <div className = 'shelf-title-box'>
-                        <span className = 'shelf-title'> Shelf A </span>
+                        <Link to = {`/bins/${param2}`}><span className = 'shelf-title'> Shelf {param2} </span></Link>
                     </div> 
+                    <div className = 'shelf-bin-box'>
+                        <span className = 'shelf-bin-title'> Add to Bin {param3} </span>
+                    </div>
                 </div>
-            )
-        case '/bins/B':
+        )
+        case `/create/${param}`:
             return(
                 <div className = 'nav-shelf'>
                     <div className = 'logo-holder'>
                         <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
                     </div>
                     <div className = 'shelf-title-box'>
-                        <span className = 'shelf-title'> Shelf B </span>
+                        <Link to = {`/bins/${param2}`}><span className = 'shelf-title'> Shelf {param2} </span></Link>
                     </div> 
+                    <div className = 'shelf-bin-box'>
+                        <span className = 'shelf-bin-title'> Add to Bin {param3} </span>
+                    </div>
                 </div>
             )
-        case '/bins/C':
+        case `/create/${param}`:
             return(
                 <div className = 'nav-shelf'>
-                <div className = 'logo-holder'>
-                    <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
+                    <div className = 'logo-holder'>
+                        <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
+                    </div>
+                    <div className = 'shelf-title-box'>
+                        <Link to = {`/bins/${param2}`}><span className = 'shelf-title'> Shelf {param2} </span></Link>
+                    </div> 
+                    <div className = 'shelf-bin-box'>
+                        <span className = 'shelf-bin-title'> Add to Bin {param3} </span>
+                    </div>
                 </div>
-                <div className = 'shelf-title-box'>
-                    <span className = 'shelf-title'> Shelf C </span>
-                </div> 
-            </div>
             )
-        case '/bins/D':
+        case `/create/${param}`:
             return(
                 <div className = 'nav-shelf'>
-                <div className = 'logo-holder'>
-                    <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
-                </div>
-                <div className = 'shelf-title-box'>
-                    <span className = 'shelf-title'> Shelf D </span>
-                </div> 
+                    <div className = 'logo-holder'>
+                        <Link to ='/'><img className = 'shelf-image' src = {image} alt = 'logo'/></Link>
+                    </div>
+                    <div className = 'shelf-title-box'>
+                        <Link to = {`/bins/${param2}`}><span className = 'shelf-title'> Shelf {param2} </span></Link>
+                    </div> 
+                    <div className = 'shelf-bin-box'>
+                        <span className = 'shelf-bin-title'> Add to Bin {param3} </span>
+                    </div>
                 </div>
             )
         case '/':

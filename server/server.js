@@ -12,6 +12,7 @@ massive(process.env.CONNECTION_STRING).then(db=>{
     app.set('db', db)
 })
 
+app.use(express.static(__dirname+'../build'))
 app.use(bodyParser.json())
 app.use(cors())
 
@@ -21,7 +22,6 @@ app.get('/api/shelfie/bins', (req,res)=>{
     const db = req.app.get('db')
     db.get_bins([req.query.bins])
     .then(resp=>{
-        console.log(resp)
         res.status(200).send(resp)
     })
     .catch(console.log)
@@ -57,6 +57,18 @@ app.put('/api/shelfie/editItem', (req,res)=>{
         })
     })
 })
+
+app.delete('/api/shelfie/deleteItem', (req,res)=>{
+    const db = req.app.get('db')
+    db.remove_item([req.query.id])
+    .then(resp=>{
+        console.log(resp)
+        res.status(200).send(resp)
+    })
+    .catch(console.log)
+})
+
+
 
 app.listen(process.env.SERVER_PORT, ()=>{
     console.log(`Listening on port ${process.env.SERVER_PORT}`)

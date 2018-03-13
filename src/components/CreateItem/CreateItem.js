@@ -37,7 +37,7 @@ export default class CreateItem extends Component {
         return(
             <div className = 'app'>
                 <div className = 'nav'>
-                    <NavCreate url = {`/create/${this.props.match.params.bin}`}/>
+                    <NavCreate url = {this.props.location.pathname} param = {this.props.match.params.bin}/>
                 </div>
                 <div className = 'container'>
                     <span className = 'container-title'> Name </span>
